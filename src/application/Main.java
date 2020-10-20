@@ -18,26 +18,19 @@ import javafx.scene.layout.VBox;
 
 public class Main extends Application {
 
-	public void Submit(ActionEvent event) throws Exception {
-		
-		if(txtUsername.getText().equals("user") && txtPassword.getText().equals("pass")) {
-			
-			Stage primaryStage = new Stage();
-			status.setText("Login Success");
-			Parent root = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
-			Scene scene = new Scene(root,600,600);
-			
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
-		}
-		else {
-			status.setText("Login Failed");
-		}
-	}
+    private static Stage primaryStage; // **Declare static Stage**
+
+    private void setPrimaryStage(Stage stage) {
+        Main.primaryStage = stage;
+    }
+
+    static public Stage getPrimaryStage() {
+        return Main.primaryStage;
+    }
 	
 	public void start(Stage primaryStage) {
 		try {
+			setPrimaryStage(primaryStage);
 			Parent root = FXMLLoader.load(getClass().getResource("/application/Login.fxml"));
 			Scene scene = new Scene(root,600,400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());

@@ -38,17 +38,17 @@ public class MainController{
 	@FXML
 	private Label l2;
 	
-	
+	private ComboBox<String> c;
 	public void Submit(ActionEvent event) throws Exception {
 		
 		if(txtUsername.getText().equals("user") && txtPassword.getText().equals("pass")) {
-			Stage primaryStage = new Stage();
+			Stage s = Main.getPrimaryStage();
 			status.setText("Login Success");
 			Parent root = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
 			Scene scene = new Scene(root,600,650);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			s.setScene(scene);
+			s.show();
 		}
 		else {
 			status.setText("Login Failed");
