@@ -1,7 +1,5 @@
 package application;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -39,20 +37,16 @@ public class MainController{
 	private Label l1;
 	@FXML
 	private Label l2;
-	@FXML
-	private ComboBox<String> c;
+	
+	
 	public void Submit(ActionEvent event) throws Exception {
 		
 		if(txtUsername.getText().equals("user") && txtPassword.getText().equals("pass")) {
-			ObservableList<String> lst = FXCollections.observableArrayList("Single","Multiple","Poly");
-			
 			Stage primaryStage = new Stage();
 			status.setText("Login Success");
 			Parent root = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
-			c.setItems(lst);
 			Scene scene = new Scene(root,600,650);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		}
