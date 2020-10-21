@@ -45,6 +45,6 @@
       <TextField fx:id="mob" layoutX="75.0" layoutY="237.0" promptText="Mobile Number" />
       <ChoiceBox fx:id="gen" layoutX="75.0" layoutY="271.0" prefWidth="150.0" />
       <ComboBox fx:id="cntry" layoutX="75.0" layoutY="305.0" prefWidth="150.0" promptText="Country" />
-      <Button layoutX="72.0" layoutY="345.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="150.0" style="-fx-background-color: #F19B09;" text="Submit" textFill="#f5ecec" />
+      <Button layoutX="72.0" layoutY="345.0" mnemonicParsing="false" onAction="#Signup" prefHeight="32.0" prefWidth="150.0" style="-fx-background-color: #F19B09;" text="Submit" textFill="#f5ecec" />
    </children>
 </AnchorPane>

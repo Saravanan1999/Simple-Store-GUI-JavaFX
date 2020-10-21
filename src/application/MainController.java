@@ -22,12 +22,7 @@ import javafx.stage.Stage;
 public class MainController implements Initializable{
 	
 
-	@FXML
-	private TextField usr;
-	@FXML
-	private TextField pss;
-	@FXML
-	private TextField mob;
+	
 	@FXML
 	private ComboBox<Integer> q1;
 	@FXML
@@ -70,10 +65,7 @@ public class MainController implements Initializable{
 	private Label l3;
 	ObservableList<Integer> l = FXCollections.observableArrayList(1,2,3,4,5);
 	
-	static String user;
-	static String pass;
-	static String country;
-	static String gender;
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		

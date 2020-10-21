@@ -26,9 +26,15 @@ import javafx.scene.layout.VBox;
 
 public class Main extends Application implements Initializable{
 
-    private static Stage primaryStage; // **Declare static Stage**
+    private static Stage primaryStage; 
     @FXML
-   
+    
+	private TextField usr;
+	@FXML
+	private TextField pss;
+	@FXML
+	private TextField mob;
+	@FXML
 	private ChoiceBox<String> gen;
     @FXML
     private ComboBox<String> cntry;
@@ -38,7 +44,11 @@ public class Main extends Application implements Initializable{
 	private TextField txtUsername;
 	@FXML
 	private TextField txtPassword;
-    private ComboBox<String> c;
+	static String user;
+	static String pass;
+	static String mobile;
+	static String country;
+	static String gender;
     ObservableList<String> list = FXCollections.observableArrayList("Male","Female","Others");
     ObservableList<String> countrylist = FXCollections.observableArrayList("Australia","India","United States","United Kingdom");
     private void setPrimaryStage(Stage stage) {
@@ -48,9 +58,16 @@ public class Main extends Application implements Initializable{
     static public Stage getPrimaryStage() {
         return Main.primaryStage;
     }
+    public void Signup(ActionEvent event) throws Exception{
+    	user = usr.getText();
+    	pass = pss.getText();
+    	mobile = mob.getText();
+    	country = cntry.getValue();
+    	gender = gen.getValue();
+    }
 	public void Submit(ActionEvent event) throws Exception {
 		
-		if(txtUsername.getText().equals("user") && txtPassword.getText().equals("pass")) {
+		if(txtUsername.getText().equals(user) && txtPassword.getText().equals(pass)) {
 			Stage s = Main.getPrimaryStage();
 			
 			status.setText("Login Success");
@@ -67,6 +84,7 @@ public class Main extends Application implements Initializable{
 			status.setText("Login Failed");
 		}
 	}
+	
 	public void start(Stage primaryStage) {
 		try {
 			setPrimaryStage(primaryStage);
