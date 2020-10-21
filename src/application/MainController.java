@@ -20,6 +20,20 @@ public class MainController{
 	@FXML
 	private TextField txtPassword;
 	@FXML
+	private TextField q1;
+	@FXML
+	private TextField q2;
+	@FXML
+	private TextField q3;
+	@FXML
+	private TextField q4;
+	@FXML
+	private TextField q5;
+	@FXML
+	private TextField q6;
+	@FXML
+	private TextField q7;
+	@FXML
 	private CheckBox i1;
 	@FXML
 	private CheckBox i2;
@@ -58,28 +72,50 @@ public class MainController{
 	
 	public void Order(ActionEvent event) throws Exception{
 		int total_price=0;
+		int q;
 		if(i1.isSelected()) {
-			total_price +=20;
+			q = Integer.parseInt(q1.getText());
+			if(q<=0) {
+				total_price +=q*20;
+			}
 		}
 		if(i2.isSelected()) {
-			total_price +=40;
+			q = Integer.parseInt(q2.getText());
+			if(q<=0) {
+				total_price +=q*40;
+			}
 		}
 		if(i3.isSelected()) {
-			total_price +=60;
+			q = Integer.parseInt(q3.getText());
+			if(q<=10) {
+				total_price +=q*60;
+			}
 		}
 		if(i4.isSelected()) {
-			total_price +=80;
+			q = Integer.parseInt(q4.getText());
+			if(q<=10) {
+				total_price +=q*80;
+			}
 		}
 		if(i5.isSelected()) {
-			total_price +=10;
+			q = Integer.parseInt(q5.getText());
+			if(q<=10) {
+				total_price +=q*10;
+			}
 		}
 		if(i6.isSelected()) {
-			total_price +=25;
+			q = Integer.parseInt(q6.getText());
+			if(q<=10) {
+				total_price +=q*25;
+			}
 		}
 		if(i7.isSelected()) {
-			total_price +=95;
+			q = Integer.parseInt(q7.getText());
+			if(q<=10) {	
+				total_price +=q*95;
+			}
 		}
-		if(total_price!=0) {
+		if(total_price!=10) {
 			l1.setText("Your order has been placed successfully");
 			l2.setText("Total order price:"+total_price);
 		}
