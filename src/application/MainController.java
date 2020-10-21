@@ -1,5 +1,10 @@
 package application;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,32 +12,35 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class MainController{
+public class MainController implements Initializable{
+	
+
 	@FXML
-	private Label status;
+	private TextField usr;
 	@FXML
-	private TextField txtUsername;
+	private TextField pss;
 	@FXML
-	private TextField txtPassword;
+	private TextField mob;
 	@FXML
-	private TextField q1;
+	private ComboBox<Integer> q1;
 	@FXML
-	private TextField q2;
+	private ComboBox<Integer> q2;
 	@FXML
-	private TextField q3;
+	private ComboBox<Integer> q3;
 	@FXML
-	private TextField q4;
+	private ComboBox<Integer> q4;
 	@FXML
-	private TextField q5;
+	private ComboBox<Integer> q5;
 	@FXML
-	private TextField q6;
+	private ComboBox<Integer> q6;
 	@FXML
-	private TextField q7;
+	private ComboBox<Integer> q7;
 	@FXML
 	private CheckBox i1;
 	@FXML
@@ -51,76 +59,77 @@ public class MainController{
 	private Label l1;
 	@FXML
 	private Label l2;
+	ObservableList<Integer> l = FXCollections.observableArrayList(1,2,3,4,5);
 	
-	private ComboBox<String> c;
-	public void Submit(ActionEvent event) throws Exception {
+	static String user;
+	static String pass;
+	static String country;
+	static String gender;
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
 		
-		if(txtUsername.getText().equals("user") && txtPassword.getText().equals("pass")) {
-			Stage s = Main.getPrimaryStage();
-			status.setText("Login Success");
-			Parent root = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
-			Scene scene = new Scene(root,600,650);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			s.setScene(scene);
-			s.show();
-		}
-		else {
-			status.setText("Login Failed");
-		}
+		
+		q1.getItems().addAll(l);
+		q2.getItems().addAll(l);
+		q3.getItems().addAll(l);
+		q4.getItems().addAll(l);
+		q5.getItems().addAll(l);
+		q6.getItems().addAll(l);
+		q7.getItems().addAll(l);
 	}
+
 
 	
 	public void Order(ActionEvent event) throws Exception{
 		int total_price=0;
 		int q;
 		if(i1.isSelected()) {
-			q = Integer.parseInt(q1.getText());
-			if(q<=0) {
-				total_price +=q*20;
-			}
+			
+			
+				total_price +=20;
+		
 		}
 		if(i2.isSelected()) {
-			q = Integer.parseInt(q2.getText());
-			if(q<=0) {
-				total_price +=q*40;
-			}
+			
+			
+				total_price +=40;
+			
 		}
 		if(i3.isSelected()) {
-			q = Integer.parseInt(q3.getText());
-			if(q<=10) {
-				total_price +=q*60;
-			}
+			
+			
+				total_price +=60;
+			
 		}
 		if(i4.isSelected()) {
-			q = Integer.parseInt(q4.getText());
-			if(q<=10) {
-				total_price +=q*80;
-			}
+			
+				total_price +=80;
+			
 		}
 		if(i5.isSelected()) {
-			q = Integer.parseInt(q5.getText());
-			if(q<=10) {
-				total_price +=q*10;
-			}
+			
+				total_price +=10;
+			
 		}
 		if(i6.isSelected()) {
-			q = Integer.parseInt(q6.getText());
-			if(q<=10) {
-				total_price +=q*25;
-			}
+			
+				total_price +=25;
+			
 		}
 		if(i7.isSelected()) {
-			q = Integer.parseInt(q7.getText());
-			if(q<=10) {	
-				total_price +=q*95;
-			}
+			
+				total_price +=95;
+			
 		}
-		if(total_price!=10) {
+		if(total_price!=0) {
 			l1.setText("Your order has been placed successfully");
 			l2.setText("Total order price:"+total_price);
 		}
 	
 		
 	}
+
+
+	
 
 }
