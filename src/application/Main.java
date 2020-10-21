@@ -55,12 +55,13 @@ public class Main extends Application implements Initializable{
 			
 			status.setText("Login Success");
 			Parent root = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
-			Stage st = new Stage();
-			Scene scene = new Scene(root,600,650);
 			
 			
-			st.setScene(scene);
-			st.show();
+			Scene scene = new Scene(root,600,700);
+			
+			
+			s.setScene(scene);
+			s.show();
 		}
 		else {
 			status.setText("Login Failed");

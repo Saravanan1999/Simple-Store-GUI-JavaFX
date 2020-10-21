@@ -15,6 +15,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -56,9 +57,17 @@ public class MainController implements Initializable{
 	@FXML
 	private CheckBox i7;
 	@FXML
+	private RadioButton r1;
+	@FXML
+	private RadioButton r2;
+	@FXML
+	private RadioButton r3;
+	@FXML
 	private Label l1;
 	@FXML
 	private Label l2;
+	@FXML
+	private Label l3;
 	ObservableList<Integer> l = FXCollections.observableArrayList(1,2,3,4,5);
 	
 	static String user;
@@ -85,50 +94,78 @@ public class MainController implements Initializable{
 		int q;
 		if(i1.isSelected()) {
 			
-			
-				total_price +=20;
+			q=q1.getValue();
+			total_price +=q*20;
 		
 		}
 		if(i2.isSelected()) {
 			
-			
-				total_price +=40;
+			q=q2.getValue();
+			total_price +=q*40;
 			
 		}
 		if(i3.isSelected()) {
 			
-			
-				total_price +=60;
+			q=q3.getValue();
+			total_price +=q*60;
 			
 		}
 		if(i4.isSelected()) {
-			
-				total_price +=80;
+			q=q4.getValue();
+			total_price +=q*80;
 			
 		}
 		if(i5.isSelected()) {
-			
-				total_price +=10;
+			q=q5.getValue();
+			total_price +=q*10;
 			
 		}
 		if(i6.isSelected()) {
-			
-				total_price +=25;
+			q=q6.getValue();
+			total_price +=q*25;
 			
 		}
 		if(i7.isSelected()) {
-			
-				total_price +=95;
+			q=q7.getValue();
+			total_price +=q*95;
 			
 		}
 		if(total_price!=0) {
 			l1.setText("Your order has been placed successfully");
 			l2.setText("Total order price:"+total_price);
+			if(r2.isSelected()) {
+				l3.setText("Payment Method:Credit/Debit Card");
+			}
+			else if(r3.isSelected()) {
+				l3.setText("Payment Method:Netbanking");
+			}
+			else {
+				l3.setText("Payment Method:Cash On Delivery");
+			}
 		}
+		
 	
 		
+		
 	}
-
+	public void check1(ActionEvent event) {
+		if(r1.isSelected()) {
+			r2.setSelected(false);
+			r3.setSelected(false);
+		}
+	}
+	public void check2(ActionEvent event) {
+		if(r2.isSelected()) {
+			r1.setSelected(false);
+			r3.setSelected(false);
+		}
+	}
+	public void check3(ActionEvent event) {
+		if(r3.isSelected()) {
+			r1.setSelected(false);
+			r2.setSelected(false);
+		}
+	}
 
 	
 

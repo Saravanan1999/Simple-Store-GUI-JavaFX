@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="650.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<AnchorPane prefHeight="731.0" prefWidth="639.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
       <Text fill="#f19b09" layoutX="162.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Mega Store">
          <font>
@@ -56,7 +56,7 @@
             <Font size="14.0" />
          </font>
       </CheckBox>
-      <Button layoutX="239.0" layoutY="510.0" mnemonicParsing="false" onAction="#Order" prefHeight="53.0" prefWidth="136.0" style="-fx-background-color: #f19b09;" text="Place Order">
+      <Button layoutX="239.0" layoutY="496.0" mnemonicParsing="false" onAction="#Order" prefHeight="53.0" prefWidth="136.0" style="-fx-background-color: #f19b09;" text="Place Order">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
@@ -96,20 +96,19 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Label fx:id="l1" layoutX="140.0" layoutY="544.0" prefHeight="40.0" prefWidth="356.0" textAlignment="CENTER" textFill="#f5f2f2">
+      <Label fx:id="l1" layoutX="138.0" layoutY="558.0" prefHeight="40.0" prefWidth="356.0" textAlignment="CENTER" textFill="#f5f2f2">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="l2" layoutX="208.0" layoutY="584.0" prefHeight="40.0" prefWidth="214.0" textFill="#faf9f9">
+      <Label fx:id="l2" layoutX="210.0" layoutY="598.0" prefHeight="40.0" prefWidth="214.0" textFill="#faf9f9">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="l" layoutX="520.0" layoutY="87.0" text="Label" />
-      <RadioButton layoutX="127.0" layoutY="461.0" mnemonicParsing="false" text="Cash On Delivery" textFill="#f8f2f2" />
-      <RadioButton layoutX="260.0" layoutY="461.0" mnemonicParsing="false" text="Credit/Debit Card" textFill="#f0e9e9" />
-      <RadioButton layoutX="398.0" layoutY="461.0" mnemonicParsing="false" text="Netbanking" textFill="#faf4f4" />
+      <RadioButton fx:id="r1" layoutX="127.0" layoutY="461.0" mnemonicParsing="false" onAction="#check1" text="Cash On Delivery" textFill="#f8f2f2" />
+      <RadioButton fx:id="r2" layoutX="260.0" layoutY="461.0" mnemonicParsing="false" onAction="#check2" text="Credit/Debit Card" textFill="#f0e9e9" />
+      <RadioButton fx:id="r3" layoutX="398.0" layoutY="461.0" mnemonicParsing="false" onAction="#check3" text="Netbanking" textFill="#faf4f4" />
       <ComboBox fx:id="q1" layoutX="342.0" layoutY="169.0" prefHeight="26.0" prefWidth="97.0" promptText="Quantity" />
       <ComboBox fx:id="q4" layoutX="341.0" layoutY="280.0" prefHeight="26.0" prefWidth="98.0" promptText="Quantity" />
       <ComboBox fx:id="q5" layoutX="341.0" layoutY="320.0" prefHeight="26.0" prefWidth="98.0" promptText="Quantity" />
@@ -117,5 +116,10 @@
       <ComboBox fx:id="q7" layoutX="341.0" layoutY="407.0" prefHeight="26.0" prefWidth="98.0" promptText="Quantity" />
       <ComboBox fx:id="q3" layoutX="341.0" layoutY="244.0" prefHeight="26.0" prefWidth="98.0" promptText="Quantity" />
       <ComboBox fx:id="q2" layoutX="341.0" layoutY="204.0" prefHeight="26.0" prefWidth="98.0" promptText="Quantity" />
+      <Label fx:id="l3" layoutX="162.0" layoutY="638.0" prefHeight="48.0" prefWidth="404.0" textFill="#f5f3f3">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
