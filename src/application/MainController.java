@@ -12,11 +12,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class MainController implements Initializable{
@@ -80,7 +78,13 @@ public class MainController implements Initializable{
 	}
 
 
-	
+	public void logout(ActionEvent event) throws Exception{
+		Stage s = Main.getPrimaryStage();
+		Parent root = FXMLLoader.load(getClass().getResource("/application/Login.fxml"));
+		Scene scene2 = new Scene(root,667,450);
+		s.setScene(scene2);
+		s.show();
+	}
 	public void Order(ActionEvent event) throws Exception{
 		int total_price=0;
 		int q;
@@ -124,7 +128,7 @@ public class MainController implements Initializable{
 		}
 		if(total_price!=0) {
 			l1.setText("Your order has been placed successfully");
-			l2.setText("Total order price:"+total_price);
+			l2.setText("Total order value:"+total_price);
 			if(r2.isSelected()) {
 				l3.setText("Payment Method:Credit/Debit Card");
 			}
@@ -135,7 +139,7 @@ public class MainController implements Initializable{
 				l3.setText("Payment Method:Cash On Delivery");
 			}
 		}
-		
+		Stage s = Main.getPrimaryStage();
 	
 		
 		

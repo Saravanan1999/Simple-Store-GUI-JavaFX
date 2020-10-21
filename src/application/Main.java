@@ -41,9 +41,13 @@ public class Main extends Application implements Initializable{
     @FXML
 	private Label status;
 	@FXML
+	private Label sgnlab;
+	@FXML
 	private TextField txtUsername;
 	@FXML
 	private TextField txtPassword;
+	
+	
 	static String user;
 	static String pass;
 	static String mobile;
@@ -64,20 +68,16 @@ public class Main extends Application implements Initializable{
     	mobile = mob.getText();
     	country = cntry.getValue();
     	gender = gen.getValue();
+    	sgnlab.setText("SignUp Success");
     }
 	public void Submit(ActionEvent event) throws Exception {
 		
 		if(txtUsername.getText().equals(user) && txtPassword.getText().equals(pass)) {
-			Stage s = Main.getPrimaryStage();
-			
+			Stage s = getPrimaryStage();
 			status.setText("Login Success");
 			Parent root = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
-			
-			
-			Scene scene = new Scene(root,600,700);
-			
-			
-			s.setScene(scene);
+			Scene scene2 = new Scene(root,639,731);
+			s.setScene(scene2);
 			s.show();
 		}
 		else {
@@ -89,10 +89,10 @@ public class Main extends Application implements Initializable{
 		try {
 			setPrimaryStage(primaryStage);
 			Parent root = FXMLLoader.load(getClass().getResource("/application/Login.fxml"));
-			Scene scene = new Scene(root,667,400);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			Scene scene1 = new Scene(root,667,450);
+			scene1.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
-			primaryStage.setScene(scene);
+			primaryStage.setScene(scene1);
 			
 			primaryStage.show();
 		} catch(Exception e) {
