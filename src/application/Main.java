@@ -18,6 +18,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -45,7 +46,7 @@ public class Main extends Application implements Initializable{
 	@FXML
 	private TextField txtUsername;
 	@FXML
-	private TextField txtPassword;
+	private PasswordField txtPassword;
 	
 	
 	static String user;

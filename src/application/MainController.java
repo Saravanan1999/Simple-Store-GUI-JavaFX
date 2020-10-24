@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.stage.Stage;
 
@@ -61,21 +62,11 @@ public class MainController implements Initializable{
 	private Label l2;
 	@FXML
 	private Label l3;
+	
 	ObservableList<Integer> l = FXCollections.observableArrayList(1,2,3,4,5);
 	
 	
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		
-		
-		q1.getItems().addAll(l);
-		q2.getItems().addAll(l);
-		q3.getItems().addAll(l);
-		q4.getItems().addAll(l);
-		q5.getItems().addAll(l);
-		q6.getItems().addAll(l);
-		q7.getItems().addAll(l);
-	}
+	
 
 
 	public void logout(ActionEvent event) throws Exception{
@@ -83,6 +74,13 @@ public class MainController implements Initializable{
 		Parent root = FXMLLoader.load(getClass().getResource("/application/Login.fxml"));
 		Scene scene2 = new Scene(root,667,450);
 		s.setScene(scene2);
+		s.show();
+	}
+	public void Reset(ActionEvent event) throws Exception{
+		Stage s = Main.getPrimaryStage();
+		Parent root = FXMLLoader.load(getClass().getResource("/application/reset.fxml"));
+		Scene scene3 = new Scene(root,600,400);
+		s.setScene(scene3);
 		s.show();
 	}
 	public void Order(ActionEvent event) throws Exception{
@@ -161,6 +159,18 @@ public class MainController implements Initializable{
 			r1.setSelected(false);
 			r2.setSelected(false);
 		}
+	}
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+		
+		q1.getItems().addAll(l);
+		q2.getItems().addAll(l);
+		q3.getItems().addAll(l);
+		q4.getItems().addAll(l);
+		q5.getItems().addAll(l);
+		q6.getItems().addAll(l);
+		q7.getItems().addAll(l);
 	}
 
 	
